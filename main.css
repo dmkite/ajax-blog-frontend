@@ -8,13 +8,18 @@ header.jumbotron{
     background-image: url('https://www.transparenttextures.com/patterns/black-thread.png'), linear-gradient(to bottom right, #FFE073, #FF7300, #E5006D, #A400BB );
     text-align:center;
     color:white;
-    height:300px;
+    height:275px;
+}
+h1{
+    font:700 72px/90px 'pridi', serif;
+    letter-spacing:2px;
 }
 
 .col-md-3{
     border:2px solid #594849;
     border-right:none;
     border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     background-color:white;
 }
 aside h2{
@@ -34,36 +39,96 @@ aside.col-md-3{
 }
 
 .col-md-7{
-    border-top:2px solid #594849;
-    border-right:2px solid #594849;
+    border:2px solid #594849;
+    border-left: none;
     border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-color:white;
 }
 
 #textarea{
     width:100%;
     height:300px;
-    border:2px solid black;
-    border-top-right-radius: 10px;
+    border:2px solid #594849;
     resize:none;
-    margin:15px 15px 15px auto;
+    margin:15px 15px 0 auto;
+    padding:10px;
 }
 
-textarea:focus{
+textarea:focus, input:focus{
     border-color: #E5006D !important;
     outline:none;
+}
+
+input{
+    display:block;
+    width:100%;
+    border:2px solid #594849;
+    border-top-right-radius: 10px;
+    margin-top:15px;
+    height:53px;
+    /* line-height:30px; */
+    padding-left:10px;
+}
+
+/*=========== Buttons ==============*/
+#delete, #edit, #cancel, #add{
+    float:right;
+    height:30px;
+    width:150px;
+    background-color:transparent;
+    border:2px solid #E5006D;
+    color:#E5006D;
+    border-bottom-right-radius: 10px;
+} 
+#edit, #cancel{
+    margin-right:15px;
+    border-color: #FF7300;
+    color: #FF7300;
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:10px;
 }
 
 #submit{
     float:right;
     width:150px;
     height:30px;
-    border-radius:10px;
+    border-bottom-right-radius:10px;
     border:2px solid #E5006D;
     color:#E5006D;transform:rotate(720deg);
     background-color:transparent;
     line-height:28px;
     outline:none;
+    margin-top:7px;
+    margin-bottom:15px;
+}
+
+#form{
+    padding-bottom:0;
+    margin-bottom:0;
+}
+
+.neutral:hover, #delete:hover, #edit:hover, #add:hover{
+    background-color:#E5006D;
+    color:white;
+    cursor:pointer;
+}
+
+#edit:hover{
+    background-color:#FF7300
+}
+
+#add{
+    border-radius:0;
+    width:150px;
+    margin:15px auto;
+    width:100%;
+    border-color:#594849;
+    color:#594849;
+}
+
+#add:hover{
+    background-color:#594849;
 }
 
 /*======== Submit button animation ==========*/
@@ -71,18 +136,22 @@ textarea:focus{
     0%{
         transform:rotate(0deg);
         width:30px; 
+        height:30px;
         color:white; 
         border:2px solid #ddd; 
         border-left:2px solid #E5006D;
         border-radius:50%;
+        overflow: hidden;
     }
     100%{
         transform:rotate(720deg);
         width:30px; 
+        height:30px;
         color:white; 
         border:2px solid #ddd; 
         border-left:2px solid #E5006D;
         border-radius:50%;
+        overflow: hidden;
     }
 }
 
@@ -117,7 +186,6 @@ textarea:focus{
 /*============== End of animation =============*/
 #entries{
     list-style-type:none;
-    border:1px dotted red;
     width:calc(100% + 30px);
     margin-left:-15px;
 }
@@ -136,8 +204,83 @@ body{
 
 .row{
     margin-top:-150px;
+    margin-bottom:50px;
 }
 
 .hidden{
     display:none;
+}
+
+.htmlPost p{
+    height:300px;
+    overflow-y:scroll;
+}
+
+.htmlPost h3{
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+
+nav ul{
+    max-height:300px;
+    overflow-y: scroll
+}
+
+
+/*============ Scroll Bars =========*/
+
+nav ul::-webkit-scrollbar, .htmlPost p::-webkit-scrollbar, textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+nav ul::-webkit-scrollbar-track, .htmlPost p::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+/* Handle */
+nav ul::-webkit-scrollbar-thumb, .htmlPost p::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
+    background:#594849;
+    border-radius:32px; 
+}
+
+/*========== Media queries========*/
+
+@media screen and (max-width:770px){
+    *{
+        border-radius:0;
+    }
+
+    nav ul{
+        max-height:200px;
+    }
+
+    .container-fluid{
+        width: calc(100% - 20px);
+        margin-left:10px;
+    }
+    .col-md-3,.col-md-7{
+        border:2px solid #594849;
+        border-radius:10px;
+        margin-bottom:15px;
+    }
+    h1{
+        font-size:48px;
+        line-height:48px;
+    }
+
+    #add, #edit, #delete, #cancel{
+        width:80px;
+        margin-bottom:15px;
+        margin-top:7px
+    }
+
+    #title{
+        border-top-left-radius: 10px;
+    }
+}
+
+h4{
+    margin:20px auto;
 }
