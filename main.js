@@ -1,5 +1,5 @@
 const axios = require('axios')
-const baseURL = 'https://ajax-blog-dmkite.herokuapp.com/'
+const baseURL = 'https://ajax-blog-dmkite.herokuapp.com'
 
 document.addEventListener('DOMContentLoaded', initialSetUp)
 
