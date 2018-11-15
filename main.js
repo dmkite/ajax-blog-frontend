@@ -3,6 +3,7 @@ const baseURL = 'https://ajax-blog-dmkite.herokuapp.com'
 
 document.addEventListener('DOMContentLoaded', initialSetUp)
 
+// This is a good pattern
 function initialSetUp(){
     getAll()
     setUpInput()
